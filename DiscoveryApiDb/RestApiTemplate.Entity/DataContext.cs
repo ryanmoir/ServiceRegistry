@@ -1,5 +1,6 @@
 ﻿namespace DiscoveryService.Entity
 {
+    using DiscoveryService.Entity.Tables;
     using Microsoft.EntityFrameworkCore;
 
     partial class DataContext : DbContext
@@ -8,5 +9,7 @@
         {
 
         }
+
+        public DbSet<Discovery> Discovery { get; set; }
     }
 }
