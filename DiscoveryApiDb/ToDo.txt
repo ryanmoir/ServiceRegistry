@@ -1,0 +1,10 @@
+To do list
+-add sql for log table using standard seri log columns
+	-put it in its own project
+-mabye figure out where data transfer objects would go
+-add db context options or would this be better stored in the entity project?
+-add base entity access class which contains below with generic class t arguments (this should go into it own small class libary project)
+	-add
+	-update
+	-remove
+	-get
