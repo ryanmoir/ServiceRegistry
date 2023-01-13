@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Models\DiscoveryService.Models.csproj" />
-    <ProjectReference Include="..\RestApiTemplate.Entity\DiscoveryService.Entity.csproj" />
+    <ProjectReference Include="..\DiscoveryService.Entity\DiscoveryService.Entity.csproj" />
   </ItemGroup>
 
 </Project>
