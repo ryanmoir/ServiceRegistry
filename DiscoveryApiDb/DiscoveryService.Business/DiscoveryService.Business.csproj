@@ -15,9 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Mappers\" />
-    <Folder Include="Services\Implmentation\" />
     <Folder Include="Services\Interface\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DiscoveryService.EntityAcceess\DiscoveryService.EntityAcceess.csproj" />
     <ProjectReference Include="..\Models\DiscoveryService.Models.csproj" />
     <ProjectReference Include="..\DiscoveryService.Entity\DiscoveryService.Entity.csproj" />
   </ItemGroup>
