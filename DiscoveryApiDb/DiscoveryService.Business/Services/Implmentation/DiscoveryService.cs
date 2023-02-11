@@ -18,17 +18,23 @@
             return entity.Id;
         }
 
-        public Task Delete(long id)
+        public async Task Delete(long id)
         {
-            throw new NotImplementedException();
+            await discoveryRepository.Delete(id);
+            await unitOfWork.SaveChangesAsync();
         }
 
-        public Task<Models.Dto.Controllers.Discovery.DiscoveryGetDto?> Get(long id)
+        public async Task<Models.Dto.Controllers.Discovery.DiscoveryGetDto?> Get(long id)
         {
-            throw new NotImplementedException();
+            var entity = await discoveryRepository.GetById(id);
+            if (entity != null)
+            {
+                return new DiscoveryGetDtoMapper().ToDto(entity);
+            }
+            return null;
         }
 
-        public Task Update(Models.Dto.Controllers.Discovery.DiscoveryUpdateDto updateDto)
+        public async Task Update(Models.Dto.Controllers.Discovery.DiscoveryUpdateDto updateDto)
         {
             throw new NotImplementedException();
         }
