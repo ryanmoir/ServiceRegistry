@@ -16,5 +16,9 @@
         public DateTime? DeletedDate { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public string ServiceName { get; set; }
+        public string GlobalAddress { get; set; }
+        public string LocalAddress { get; set; }
     }
 }
