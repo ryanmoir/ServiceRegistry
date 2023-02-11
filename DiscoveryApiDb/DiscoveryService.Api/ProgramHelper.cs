@@ -9,6 +9,14 @@
     using Serilog;
     using Serilog.Core;
     using System;
+    using DiscoveryService.Api.Helper;
+    using DiscoveryService.Api.Helpers.Interface;
+    using DiscoveryService.EntityAcceess.UnitOfWork.Implmentation;
+    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
+    using DiscoveryService.EntityAcceess.Repository.Interface;
+    using DiscoveryService.Business.Services.Interface;
+    using DiscoveryService.EntityAcceess.Repository.Implmentation;
+    using DiscoveryService.Business.Services.Implmentation;
 
     public static class ProgramHelper
     {
@@ -30,8 +38,15 @@
             });
 
             var optionBuilder = new DbContextOptionsBuilder<DataContext>();
-            optionBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=TemplateToScaffold;Trusted_Connection=True;");
-            builder.Services.AddSingleton(x => new DataContextFactory(optionBuilder.Options));
+            optionBuilder.UseSqlServer(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=Discovery;TrustServerCertificate=Yes;Integrated Security=False;User ID=test;Password=passwordv2;");
+            optionBuilder.EnableSensitiveDataLogging();
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(x => new UnitOfWork(new DataContextFactory(optionBuilder.Options)));
+            builder.Services.AddScoped<IDiscoveryRespository, DiscoveryRespository>();
+
+            builder.Services.AddScoped<IControllerHelper, ControllerHelper>(x => new ControllerHelper());
+
+            builder.Services.AddScoped<IDiscoveryService, DiscoveryService>();
 
             return builder;
         }

@@ -2,13 +2,21 @@
 {
     using global::DiscoveryService.Business.Mappers.Discovery;
     using global::DiscoveryService.Business.Services.Interface;
+    using global::DiscoveryService.EntityAcceess.Repository.Interface;
+    using global::DiscoveryService.EntityAcceess.UnitOfWork.Interface;
     using System.Threading.Tasks;
 
     public class DiscoveryService : IDiscoveryService
     {
-        public EntityAcceess.Repository.Interface.IDiscoveryRespository discoveryRepository => throw new NotImplementedException();
+        public IDiscoveryRespository discoveryRepository { get; internal set; }
 
-        public EntityAcceess.UnitOfWork.Interface.IUnitOfWork unitOfWork => throw new NotImplementedException();
+        public IUnitOfWork unitOfWork { get; internal set; }
+
+        public DiscoveryService(IDiscoveryRespository discoveryRespository, IUnitOfWork unitOfWork)
+        {
+            this.discoveryRepository = discoveryRespository;
+            this.unitOfWork = unitOfWork;
+        }
 
         public async Task<long> Add(Models.Dto.Controllers.Discovery.DiscoveryAddDto addDto)
         {

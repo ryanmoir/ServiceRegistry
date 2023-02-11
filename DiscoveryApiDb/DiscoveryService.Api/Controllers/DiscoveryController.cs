@@ -46,14 +46,7 @@ namespace DiscoveryService.Api.Controllers
             try
             {
                 var newId = await discoveryService.Add(discoveryAdDto);
-                if (newId != 0)
-                {
-                    return Ok(newId);
-                }
-                else
-                {
-                    return NotFound("No id for new row was returned");
-                }
+                return Ok(newId);
             }
             catch (Exception e)
             {

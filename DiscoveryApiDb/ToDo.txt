@@ -6,3 +6,4 @@ To do list
 -add unit tests
 -add custom exceptions
 -add caching
+-remove global usings
