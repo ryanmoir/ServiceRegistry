@@ -4,3 +4,5 @@ To do list
 -finish coding client
 -finish coding LogApiRequestAttribute
 -add unit tests
+-add custom exceptions
+-add caching
