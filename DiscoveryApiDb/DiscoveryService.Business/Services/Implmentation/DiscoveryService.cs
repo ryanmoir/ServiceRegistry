@@ -36,7 +36,9 @@
 
         public async Task Update(Models.Dto.Controllers.Discovery.DiscoveryUpdateDto updateDto)
         {
-            throw new NotImplementedException();
+            var entity = new DiscoveryUpdateDtoMapper().ToEntity(updateDto);
+            discoveryRepository.Update(entity);
+            await unitOfWork.SaveChangesAsync();
         }
     }
 }
