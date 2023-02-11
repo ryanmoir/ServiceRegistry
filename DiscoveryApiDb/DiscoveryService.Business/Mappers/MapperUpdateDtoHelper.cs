@@ -12,8 +12,6 @@
     {
         public void ToTable(T table, D dto)
         {
-            table.IsDeleted = dto.IsDeleted;
-
             table.UpdateDate = dto.UpdatedOn;
             table.UpdatedBy = dto.UpdatedBy;
         }

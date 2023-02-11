@@ -5,7 +5,6 @@
     public class BaseUpdateDto : IUpdateDto, IValidatableDto
     {
         public long Id { get; set; }
-        public bool IsDeleted { get; set; }
         public long UpdatedBy { get; set; }
         public DateTime UpdatedOn { get; set; }
 
@@ -24,10 +23,6 @@
             if (UpdatedOn == DateTime.MinValue)
             {
                 validationErrros.Add("UpdatedOn must have a value");
-            }
-            if (IsDeleted)
-            {
-                validationErrros.Add("Cannot set IsDeleted to deleted using a updatedDto");
             }
 
             return validationErrros.Count == 0 ? true : false;

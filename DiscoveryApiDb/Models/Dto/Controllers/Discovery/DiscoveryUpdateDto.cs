@@ -4,5 +4,8 @@
 
     public class DiscoveryUpdateDto : BaseUpdateDto
     {
+        public string ServiceName { get; set; }
+        public string GlobalAddress { get; set; }
+        public string LocalAddress { get; set; }
     }
 }

@@ -12,6 +12,11 @@
             var mapperHelper = new MapperUpdateDtoHelper<Discovery, DiscoveryUpdateDto>();
             mapperHelper.ToTable(entity, dto);
 
+            entity.Id = dto.Id;
+            entity.ServiceName = dto.ServiceName;
+            entity.GlobalAddress = dto.GlobalAddress;
+            entity.LocalAddress = dto.LocalAddress;
+
             return entity;
         }
     }
