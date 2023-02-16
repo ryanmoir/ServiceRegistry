@@ -27,11 +27,17 @@
         {
             var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrelationId, RequestId);
             if (!string.IsNullOrEmpty(errorStr))
-            {
                 return BadRequest(errorStr);
-            }
 
-            throw new NotImplementedException();
+            try
+            {
+                var response = await requestService.ProcessRequest(this.Request);
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
         }
     }
 }

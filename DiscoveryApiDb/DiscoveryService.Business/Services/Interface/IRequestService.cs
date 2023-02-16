@@ -1,9 +1,10 @@
 ﻿namespace DiscoveryService.Business.Services.Interface
 {
+    using HttpRequestWrapper;
+    using Microsoft.AspNetCore.Http;
+
     public interface IRequestService
     {
-        Task ProcessGetRequest();
-        Task ProcessPostRequest();
-        Task ProcessDeleteRequest();
+        Task<HttpResponseContainer> ProcessRequest(HttpRequest request);
     }
 }

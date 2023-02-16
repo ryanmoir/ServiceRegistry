@@ -24,4 +24,10 @@
     <ProjectReference Include="..\DiscoveryService.Entity\DiscoveryService.Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="HttpRequestWrapper">
+      <HintPath>..\Dlls\HttpRequestWrapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

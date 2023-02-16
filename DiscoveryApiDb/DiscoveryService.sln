@@ -22,6 +22,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryService.Models", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryService.EntityAcceess", "DiscoveryService.EntityAcceess\DiscoveryService.EntityAcceess.csproj", "{DDD1C2BD-3EA2-4CC1-842A-36AD78667AEE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{6DA7D8AF-F9D5-46C0-AD6D-5627ACFAFE58}"
+	ProjectSection(SolutionItems) = preProject
+		Dlls\HttpRequestWrapper.dll = Dlls\HttpRequestWrapper.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
