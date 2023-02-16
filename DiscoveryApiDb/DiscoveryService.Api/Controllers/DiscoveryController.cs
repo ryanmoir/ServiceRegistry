@@ -30,9 +30,9 @@ namespace DiscoveryService.Api.Controllers
         [LogApiRequest]
         [ApiVersion("1.0")]
         [Route("Add")]
-        public async Task<IActionResult> Add([FromHeader] Guid CorrelationId, [FromHeader] Guid RequestId, [FromBody] DiscoveryAddDto discoveryAdDto)
+        public async Task<IActionResult> Add([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid, [FromBody] DiscoveryAddDto discoveryAdDto)
         {
-            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrelationId, RequestId);
+            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrolationGuid, RequestGuid);
             if (!string.IsNullOrEmpty(errorStr))
             {
                 return BadRequest(errorStr);
@@ -58,9 +58,9 @@ namespace DiscoveryService.Api.Controllers
         [LogApiRequest]
         [ApiVersion("1.0")]
         [Route("Get")]
-        public async Task<IActionResult> Get([FromHeader] Guid CorrelationId, [FromHeader] Guid RequestId, [FromQuery] int serviceId)
+        public async Task<IActionResult> Get([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid, [FromQuery] int serviceId)
         {
-            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrelationId, RequestId);
+            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrolationGuid, RequestGuid);
             if (!string.IsNullOrEmpty(errorStr))
             {
                 return BadRequest(errorStr);
@@ -93,9 +93,9 @@ namespace DiscoveryService.Api.Controllers
         [LogApiRequest]
         [ApiVersion("1.0")]
         [Route("Delete")]
-        public async Task<IActionResult> Delete([FromHeader] Guid CorrelationId, [FromHeader] Guid RequestId, [FromQuery] int serviceId)
+        public async Task<IActionResult> Delete([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid, [FromQuery] int serviceId)
         {
-            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrelationId, RequestId);
+            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrolationGuid, RequestGuid);
             if (!string.IsNullOrEmpty(errorStr))
             {
                 return BadRequest(errorStr);
@@ -121,9 +121,9 @@ namespace DiscoveryService.Api.Controllers
         [LogApiRequest]
         [ApiVersion("1.0")]
         [Route("Update")]
-        public async Task<IActionResult> Update([FromHeader] Guid CorrelationId, [FromHeader] Guid RequestId, [FromBody] DiscoveryUpdateDto discoveryUpdateDto)
+        public async Task<IActionResult> Update([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid, [FromBody] DiscoveryUpdateDto discoveryUpdateDto)
         {
-            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrelationId, RequestId);
+            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrolationGuid, RequestGuid);
             if (!string.IsNullOrEmpty(errorStr))
             {
                 return BadRequest(errorStr);

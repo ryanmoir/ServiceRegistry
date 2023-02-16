@@ -1,5 +1,6 @@
 ﻿namespace DiscoveryService.Api.Controllers
 {
+    using DiscoveryService.Api.Attributes;
     using DiscoveryService.Api.Helpers.Interface;
     using DiscoveryService.Business.Services.Interface;
     using Microsoft.AspNetCore.Mvc;
@@ -23,20 +24,27 @@
             this.controllerHelper = controllerHelper;
         }
 
-        public async Task<IActionResult> ProcessRequest([FromHeader] Guid CorrelationId, [FromHeader] Guid RequestId)
+        [HttpGet]
+        [LogApiRequest]
+        [ApiVersion("1.0")]
+        [Route("ProcessRequest")]
+        public async Task<IActionResult> ProcessRequest([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid)
         {
-            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrelationId, RequestId);
+            var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrolationGuid, RequestGuid);
             if (!string.IsNullOrEmpty(errorStr))
                 return BadRequest(errorStr);
 
             try
             {
                 var response = await requestService.ProcessRequest(this.Request);
-                return Ok(response);
+                if (response.IsSuccess)
+                    return Ok(response);
+                else
+                    return BadRequest(response);
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
     }
