@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{6DA7D8AF-F
 		Dlls\HttpRequestWrapper.dll = Dlls\HttpRequestWrapper.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscoveryService.Client", "DiscoveryService.Client\DiscoveryService.Client.csproj", "{D9EFB6EF-C6E5-43DA-BCD0-1D79BAE21A50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{DDD1C2BD-3EA2-4CC1-842A-36AD78667AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDD1C2BD-3EA2-4CC1-842A-36AD78667AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDD1C2BD-3EA2-4CC1-842A-36AD78667AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9EFB6EF-C6E5-43DA-BCD0-1D79BAE21A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9EFB6EF-C6E5-43DA-BCD0-1D79BAE21A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9EFB6EF-C6E5-43DA-BCD0-1D79BAE21A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9EFB6EF-C6E5-43DA-BCD0-1D79BAE21A50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

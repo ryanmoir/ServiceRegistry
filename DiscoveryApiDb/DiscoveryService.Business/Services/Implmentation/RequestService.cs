@@ -20,11 +20,10 @@
                 serviceUri = headers.First().Value;
             if (string.IsNullOrEmpty(serviceName) || string.IsNullOrEmpty(serviceUri))
                 throw new Exception("requests missing service headers which are needed for the discovery service");
-
+            
             var requestWrapper = new RequestWrapper(request, HttpMethod.Get, new Uri(serviceUri));
             var client = new HttpClientHelper();
-            var response = await client.SendAsync(requestWrapper);
-            return response;
+            return await client.SendAsync(requestWrapper);
         }
     }
 }

@@ -24,7 +24,7 @@
             this.controllerHelper = controllerHelper;
         }
 
-        [HttpGet]
+        [HttpPost]
         [LogApiRequest]
         [ApiVersion("1.0")]
         [Route("ProcessRequest")]
