@@ -38,6 +38,7 @@ namespace DiscoveryService.Api.Controllers
                 return BadRequest(errorStr);
             }
 
+            controllerHelper.SetUpReponseGuids(this, CorrolationGuid);
             if (!controllerHelper.IsDtoVald(discoveryAdDto, out var errors))
             {
                 return BadRequest(errors);
@@ -66,6 +67,7 @@ namespace DiscoveryService.Api.Controllers
                 return BadRequest(errorStr);
             }
 
+            controllerHelper.SetUpReponseGuids(this, CorrolationGuid);
             if (!controllerHelper.IsItemIdValid(serviceId))
             {
                 return BadRequest("invalid service id");
@@ -101,6 +103,7 @@ namespace DiscoveryService.Api.Controllers
                 return BadRequest(errorStr);
             }
 
+            controllerHelper.SetUpReponseGuids(this, CorrolationGuid);
             if (!controllerHelper.IsItemIdValid(serviceId))
             {
                 return BadRequest("invalid service id");
@@ -129,6 +132,7 @@ namespace DiscoveryService.Api.Controllers
                 return BadRequest(errorStr);
             }
 
+            controllerHelper.SetUpReponseGuids(this, CorrolationGuid);
             if (!controllerHelper.IsDtoVald(discoveryUpdateDto, out var errors))
             {
                 return BadRequest(errors);

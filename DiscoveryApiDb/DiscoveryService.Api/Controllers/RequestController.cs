@@ -3,6 +3,7 @@
     using DiscoveryService.Api.Attributes;
     using DiscoveryService.Api.Helpers.Interface;
     using DiscoveryService.Business.Services.Interface;
+    using HttpRequestWrapper;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using System;
@@ -34,6 +35,7 @@
             if (!string.IsNullOrEmpty(errorStr))
                 return BadRequest(errorStr);
 
+            controllerHelper.SetUpReponseGuids(this, CorrolationGuid);
             try
             {
                 var response = await requestService.ProcessRequest(this.Request);

@@ -2,6 +2,7 @@
 {
     using DiscoveryService.Api.Helpers.Interface;
     using DiscoveryService.Models.Dto.Interface;
+    using Microsoft.AspNetCore.Mvc;
     using System;
 
     public class ControllerHelper : IControllerHelper
@@ -10,12 +11,12 @@
         {
             if (CorrelationId == Guid.Empty)
             {
-                return "missinng corrolation id";
+                return "missing corrolation id";
             }
 
             if (RequestId == Guid.Empty)
             {
-                return "missinng request id";
+                return "missing request id";
             }
 
             return string.Empty;
@@ -39,6 +40,13 @@
         public bool IsItemIdValid(long? id)
         {
             return id.HasValue && id != 0 ? true : false;
+        }
+
+
+        public void SetUpReponseGuids(ControllerBase controllerBase, Guid corrolationGuid)
+        {
+            controllerBase.Response.Headers.Add("CorrolationGuid", corrolationGuid.ToString());
+            controllerBase.Response.Headers.Add("RequestGuid", Guid.NewGuid().ToString());
         }
     }
 }
