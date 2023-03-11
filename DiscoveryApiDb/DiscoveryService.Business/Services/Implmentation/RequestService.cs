@@ -11,6 +11,7 @@
         {
             var serviceName = string.Empty;
             var serviceUri = string.Empty;
+            var serviceMethod = string.Empty;
 
             var headers = request.Headers.Where(x => x.Key == "ServiceName");
             if (headers.Any())
@@ -18,10 +19,29 @@
             headers = request.Headers.Where(x => x.Key == "ServiceUri");
             if (headers.Any())
                 serviceUri = headers.First().Value;
-            if (string.IsNullOrEmpty(serviceName) || string.IsNullOrEmpty(serviceUri))
-                throw new Exception("requests missing service headers which are needed for the discovery service");
-            
-            var requestWrapper = new RequestWrapper(request, HttpMethod.Get, new Uri(serviceUri));
+            headers = request.Headers.Where(x => x.Key == "ServiceMethod");
+            if (headers.Any())
+                serviceMethod = headers.First().Value;
+            if (string.IsNullOrEmpty(serviceName) || string.IsNullOrEmpty(serviceUri) || string.IsNullOrEmpty(serviceMethod))
+                throw new Exception("request missing service headers which are needed for the discovery service");
+
+            HttpMethod? meth;
+            switch (serviceMethod.ToLower())
+            {
+                case "get":
+                    meth = HttpMethod.Get;
+                    break;
+                case "post":
+                    meth = HttpMethod.Post;
+                    break;
+                case "delete":
+                    meth = HttpMethod.Delete;
+                    break;
+                default:
+                    throw new Exception($"{serviceMethod} is not supported");
+            }
+
+            var requestWrapper = new RequestWrapper(request, meth, new Uri(serviceUri));
             var client = new HttpClientHelper();
             return await client.SendAsync(requestWrapper);
         }
