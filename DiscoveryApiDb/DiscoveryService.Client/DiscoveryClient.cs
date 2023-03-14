@@ -21,25 +21,39 @@
         public async Task<HttpResponseContainer> DiscoveryAdd(DiscoveryAddDto discoveryAddDto)
         {
             var request = new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Add"));
-            return await clientHelper.SendAsync<DiscoveryAddDto>(request, discoveryAddDto);
+            return await clientHelper.SendAsync<DiscoveryAddDto>(MakeDiscoveryAdd(), discoveryAddDto);
         }
-
         public async Task<HttpResponseContainer> DiscoveryDelete(long discoveryId)
         {
             var request = new RequestWrapper(HttpMethod.Delete, new Uri(BuildBaseDiscoveryontrollerString + $"Delete?serviceId={discoveryId}"));
-            return await clientHelper.SendAsync(request);
+            return await clientHelper.SendAsync(MakeDiscoveryDelete(discoveryId));
         }
-
         public async Task<HttpResponseContainer> DiscoveryGet(long discoveryId)
         {
             var request = new RequestWrapper(HttpMethod.Get, new Uri(BuildBaseDiscoveryontrollerString + $"Get?serviceId={discoveryId}"));
-            return await clientHelper.SendAsync<DiscoveryGetDto>(request);
+            return await clientHelper.SendAsync<DiscoveryGetDto>(MakeDiscoveryGet(discoveryId));
         }
-
         public async Task<HttpResponseContainer> DiscoveryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
         {
             var request = new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Update"));
-            return await clientHelper.SendAsync<DiscoveryUpdateDto>(request, discoveryUpdateDto);
+            return await clientHelper.SendAsync<DiscoveryUpdateDto>(MakeDiscoveryUpdate(), discoveryUpdateDto);
+        }
+
+        public RequestWrapper MakeDiscoveryAdd()
+        {
+            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Add"));
+        }
+        public RequestWrapper MakeDiscoveryDelete(long discoveryId)
+        {
+            return new RequestWrapper(HttpMethod.Delete, new Uri(BuildBaseDiscoveryontrollerString + $"Delete?serviceId={discoveryId}"));
+        }
+        public RequestWrapper MakeDiscoveryGet(long discoveryId)
+        {
+            return new RequestWrapper(HttpMethod.Get, new Uri(BuildBaseDiscoveryontrollerString + $"Get?serviceId={discoveryId}"));
+        }
+        public RequestWrapper MakeDiscoveryUpdate()
+        {
+            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Update"));
         }
 
         public async Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper requestToFoward)
