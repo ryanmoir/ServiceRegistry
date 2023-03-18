@@ -39,7 +39,7 @@
             try
             {
                 var response = await requestService.ProcessRequest(this.Request);
-                var responseContent = response.Response.Content.ReadAsStringAsync();
+                var responseContent = await response.Response.Content.ReadAsStringAsync();
                 if (response.IsSuccess)
                     return Ok(responseContent);
                 else

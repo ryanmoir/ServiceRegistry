@@ -13,9 +13,9 @@
         Task<HttpResponseContainer> DiscoveryUpdate(DiscoveryUpdateDto discoveryUpdateDto);
         Task<HttpResponseContainer> DiscoveryGet(long discoveryId);
 
-        RequestWrapper MakeDiscoveryAdd();
+        RequestWrapper MakeDiscoveryAdd(DiscoveryAddDto discoveryAddDto);
         RequestWrapper MakeDiscoveryDelete(long discoveryId);
         RequestWrapper MakeDiscoveryGet(long discoveryId);
-        RequestWrapper MakeDiscoveryUpdate();
+        RequestWrapper MakeDiscoveryUpdate(DiscoveryUpdateDto discoveryUpdateDto);
     }
 }
