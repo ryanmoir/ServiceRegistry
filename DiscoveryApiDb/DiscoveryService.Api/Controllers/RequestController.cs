@@ -29,7 +29,7 @@
         [LogApiRequest]
         [ApiVersion("1.0")]
         [Route("ProcessRequest")]
-        public async Task<IActionResult> ProcessRequestPost([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid)
+        public async Task<IActionResult> ProcessRequestPost([FromHeader] Guid CorrolationGuid, [FromHeader] Guid RequestGuid, [FromQuery] string ServiceName)
         {
             var errorStr = controllerHelper.CheckCorrolationAndRequestId(CorrolationGuid, RequestGuid);
             if (!string.IsNullOrEmpty(errorStr))
@@ -38,7 +38,7 @@
             controllerHelper.SetUpReponseGuids(this, CorrolationGuid);
             try
             {
-                var response = await requestService.ProcessRequest(this.Request);
+                var response = await requestService.ProcessRequest(this.Request, ServiceName);
                 var responseContent = await response.Response.Content.ReadAsStringAsync();
                 if (response.IsSuccess)
                     return Ok(responseContent);

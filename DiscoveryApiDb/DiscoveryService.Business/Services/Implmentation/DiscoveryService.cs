@@ -48,5 +48,15 @@
             discoveryRepository.Update(entity);
             await unitOfWork.SaveChangesAsync();
         }
+
+        public async Task<Models.Dto.Controllers.Discovery.DiscoveryGetDto?> Get(string serviceName)
+        {
+            var entity = await discoveryRepository.GetByServiceName(serviceName);
+            if (entity != null)
+            {
+                return new DiscoveryGetDtoMapper().ToDto(entity);
+            }
+            return null;
+        }
     }
 }

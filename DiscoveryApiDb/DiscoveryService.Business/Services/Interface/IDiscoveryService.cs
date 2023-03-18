@@ -13,5 +13,6 @@
         public Task Delete(long id);
         public Task Update(DiscoveryUpdateDto updateDto);
         public Task<DiscoveryGetDto?> Get(long id);
+        public Task<DiscoveryGetDto?> Get(string serviceName);
     }
 }

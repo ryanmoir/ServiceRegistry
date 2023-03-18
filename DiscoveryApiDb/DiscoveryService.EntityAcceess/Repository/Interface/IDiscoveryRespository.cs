@@ -4,5 +4,6 @@
 
     public interface IDiscoveryRespository : IGenericRespository<Discovery>
     {
+        public Task<Discovery> GetByServiceName(string ServiceName);
     }
 }

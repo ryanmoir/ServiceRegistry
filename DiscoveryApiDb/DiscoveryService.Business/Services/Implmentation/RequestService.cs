@@ -7,8 +7,19 @@
 
     public class RequestService : IRequestService
     {
-        public async Task<HttpResponseContainer> ProcessRequest(HttpRequest request)
+        private readonly IDiscoveryService discoveryService;
+
+        public RequestService(IDiscoveryService _discoveryService)
         {
+            discoveryService = _discoveryService;
+        }
+
+        public async Task<HttpResponseContainer> ProcessRequest(HttpRequest request, string ServiceName)
+        {
+            var serviceDetails = await discoveryService.Get(ServiceName);
+            if (serviceDetails == null)
+                throw new Exception("No matching service found");
+
             //method
             HttpMethod? embeddedRequestMethod = null;
             var headers = request.Headers.Where(x => x.Key == "requestToEmbedMethod");
@@ -37,11 +48,14 @@
                 throw new Exception("missing requestToEmbedUri header");
             else
             {
-                //https://localhost:7272/swagger/index.html
-                //https://localhost:7272/api/v1/Discovery/Get?serviceId=1
+                //this is due to request being set up so that they can ethier be sent here or direct to the intended service
+                //so need to do bit of admin to make sure we creating the right uri
                 var embeddedRequestUriStr = headers.FirstOrDefault().Value.First();
                 var strSplit = embeddedRequestUriStr.Split("api/");
-                embeddedRequestUri = new Uri("https://localhost:7272/api/" + strSplit[1]);
+                if (strSplit.Length > 1)
+                    embeddedRequestUri = new Uri(serviceDetails.GlobalAddress + strSplit[1]);
+                else
+                    embeddedRequestUri = new Uri(serviceDetails.GlobalAddress + strSplit[0]);
             }
 
             //body

@@ -5,6 +5,6 @@
 
     public interface IRequestService
     {
-        Task<HttpResponseContainer> ProcessRequest(HttpRequest request);
+        Task<HttpResponseContainer> ProcessRequest(HttpRequest request, string ServiceName);
     }
 }
