@@ -1,7 +1,4 @@
 To do list
--finish coding service layer
--finish coding dto models
--finish coding client
 -finish coding LogApiRequestAttribute
 -add unit tests
 -add custom exceptions
