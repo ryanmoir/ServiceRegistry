@@ -3,6 +3,8 @@
     using global::DiscoveryService.Business.Services.Interface;
     using HttpRequestWrapper;
     using Microsoft.AspNetCore.Http;
+    using Newtonsoft.Json;
+    using System.Text;
     using System.Threading.Tasks;
 
     public class RequestService : IRequestService
@@ -58,19 +60,23 @@
                     embeddedRequestUri = new Uri(serviceDetails.GlobalAddress + strSplit[0]);
             }
 
-            //body
-            headers = request.Headers.Where(x => x.Key == "requestToEmbedBody");
-            if (headers.Any())
-            {
-
-            }
-
             //headers
 
             //set up request to forward
             var requestWrapper = new RequestWrapper(embeddedRequestMethod, embeddedRequestUri);
             requestWrapper.Headers.Remove("CorrolationGuid");
             requestWrapper.Headers.Add("CorrolationGuid", request.Headers.Where(x => x.Key == "CorrolationGuid").First().Value.First());
+
+            //body
+            string requestToEmbedBody = string.Empty;
+            headers = request.Headers.Where(x => x.Key == "requestToEmbedBody");
+            if (headers.Any())
+            {
+                requestToEmbedBody = headers.FirstOrDefault().Value.First();
+                requestWrapper.Content = new StringContent(
+                    requestToEmbedBody, Encoding.UTF8,
+                    "application/json");
+            }
 
             //send the request
             var client = new HttpClientHelper();
