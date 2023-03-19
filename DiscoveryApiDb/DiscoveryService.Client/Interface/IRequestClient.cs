@@ -7,6 +7,6 @@
     /// </summary>
     public interface IRequestClient
     {
-        Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper request);
+        Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper request, string serviceName);
     }
 }

@@ -52,9 +52,9 @@
             return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Update"), discoveryUpdateDto);
         }
 
-        public async Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper requestToFoward)
+        public async Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper requestToFoward, string serviceName)
         {
-            var request = new RequestWrapper(requestToFoward, HttpMethod.Post, new Uri(BuildBaseRequestControllerString + "ProcessRequest"));
+            var request = new RequestWrapper(requestToFoward, HttpMethod.Post, new Uri(BuildBaseRequestControllerString + $"ProcessRequest?ServiceName={serviceName}"));
             return await clientHelper.SendAsync<T>(request);
         }
     }
