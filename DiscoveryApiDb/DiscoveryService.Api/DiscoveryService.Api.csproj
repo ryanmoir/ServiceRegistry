@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DiscoveryService.Business\DiscoveryService.Business.csproj" />
-    <ProjectReference Include="..\DiscoveryService.Entity\DiscoveryService.Entity.csproj" />
+    <ProjectReference Include="..\Models\DiscoveryService.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

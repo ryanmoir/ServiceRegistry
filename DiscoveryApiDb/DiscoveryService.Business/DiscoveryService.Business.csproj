@@ -25,7 +25,6 @@
   <ItemGroup>
     <ProjectReference Include="..\DiscoveryService.EntityAcceess\DiscoveryService.EntityAcceess.csproj" />
     <ProjectReference Include="..\Models\DiscoveryService.Models.csproj" />
-    <ProjectReference Include="..\DiscoveryService.Entity\DiscoveryService.Entity.csproj" />
   </ItemGroup>
 
   <ItemGroup>
