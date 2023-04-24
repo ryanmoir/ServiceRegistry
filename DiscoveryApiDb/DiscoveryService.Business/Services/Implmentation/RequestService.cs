@@ -3,8 +3,6 @@
     using global::DiscoveryService.Business.Services.Interface;
     using HttpRequestWrapper;
     using Microsoft.AspNetCore.Http;
-    using Newtonsoft.Json;
-    using System.Text;
     using System.Threading.Tasks;
 
     public class RequestService : IRequestService
@@ -18,69 +16,18 @@
 
         public async Task<HttpResponseContainer> ProcessRequest(HttpRequest request, string ServiceName)
         {
+            var embeddedRequest = RequestWrapper.UnpackEmbeddedRequest(request);
+
+            //need suppport for adding a url prefix to it before can use discovery service for this bit
+            /*
             var serviceDetails = await discoveryService.Get(ServiceName);
             if (serviceDetails == null)
                 throw new Exception("No matching service found");
-
-            //method
-            HttpMethod? embeddedRequestMethod = null;
-            var headers = request.Headers.Where(x => x.Key == "requestToEmbedMethod");
-            if (!headers.Any())
-                throw new Exception("missing requestToEmbedMethod header");
-            var requestToEmbedMethodHeaderValue = headers.FirstOrDefault().Value.First();
-            switch (requestToEmbedMethodHeaderValue.ToLower())
-            {
-                case "get":
-                    embeddedRequestMethod = HttpMethod.Get;
-                    break;
-                case "post":
-                    embeddedRequestMethod = HttpMethod.Post;
-                    break;
-                case "delete":
-                    embeddedRequestMethod = HttpMethod.Delete;
-                    break;
-                default:
-                    throw new Exception($"{requestToEmbedMethodHeaderValue} is not supported");
-            }
-
-            //uri
-            Uri? embeddedRequestUri = null;
-            headers = request.Headers.Where(x => x.Key == "requestToEmbedUri");
-            if (!headers.Any())
-                throw new Exception("missing requestToEmbedUri header");
-            else
-            {
-                //this is due to request being set up so that they can ethier be sent here or direct to the intended service
-                //so need to do bit of admin to make sure we creating the right uri
-                var embeddedRequestUriStr = headers.FirstOrDefault().Value.First();
-                var strSplit = embeddedRequestUriStr.Split("api/");
-                if (strSplit.Length > 1)
-                    embeddedRequestUri = new Uri(serviceDetails.GlobalAddress + strSplit[1]);
-                else
-                    embeddedRequestUri = new Uri(serviceDetails.GlobalAddress + strSplit[0]);
-            }
-
-            //headers
-
-            //set up request to forward
-            var requestWrapper = new RequestWrapper(embeddedRequestMethod, embeddedRequestUri);
-            requestWrapper.Headers.Remove("CorrolationGuid");
-            requestWrapper.Headers.Add("CorrolationGuid", request.Headers.Where(x => x.Key == "CorrolationGuid").First().Value.First());
-
-            //body
-            string requestToEmbedBody = string.Empty;
-            headers = request.Headers.Where(x => x.Key == "requestToEmbedBody");
-            if (headers.Any())
-            {
-                requestToEmbedBody = headers.FirstOrDefault().Value.First();
-                requestWrapper.Content = new StringContent(
-                    requestToEmbedBody, Encoding.UTF8,
-                    "application/json");
-            }
+            */
 
             //send the request
             var client = new HttpClientHelper();
-            return await client.SendAsync(requestWrapper);
+            return await client.SendAsync(embeddedRequest);
         }
     }
 }
