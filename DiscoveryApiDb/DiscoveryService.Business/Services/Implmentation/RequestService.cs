@@ -15,17 +15,12 @@
         }
 
         public async Task<HttpResponseContainer> ProcessRequest(HttpRequest request, string ServiceName)
-        {
-            var embeddedRequest = RequestWrapper.UnpackEmbeddedRequest(request);
-
-            //need suppport for adding a url prefix to it before can use discovery service for this bit
-            /*
+        {          
             var serviceDetails = await discoveryService.Get(ServiceName);
             if (serviceDetails == null)
                 throw new Exception("No matching service found");
-            */
 
-            //send the request
+            var embeddedRequest = RequestWrapper.UnpackEmbeddedRequest(request, serviceDetails.GlobalAddress);
             var client = new HttpClientHelper();
             return await client.SendAsync(embeddedRequest);
         }
