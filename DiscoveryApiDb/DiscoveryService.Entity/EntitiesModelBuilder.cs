@@ -8,6 +8,7 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Discovery>().HasKey(t => t.Id);
+            modelBuilder.Entity<HeartBeat>().HasKey(t => t.Id);
         }
     }
 }

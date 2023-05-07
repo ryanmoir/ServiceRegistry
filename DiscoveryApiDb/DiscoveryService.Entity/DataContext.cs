@@ -11,5 +11,6 @@
         }
 
         public DbSet<Discovery> Discovery { get; set; }
+        public DbSet<HeartBeat> HeartBeat { get; set; }
     }
 }
