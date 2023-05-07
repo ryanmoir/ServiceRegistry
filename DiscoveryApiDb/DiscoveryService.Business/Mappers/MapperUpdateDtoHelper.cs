@@ -8,7 +8,7 @@
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="D"></typeparam>
-    public class MapperUpdateDtoHelper<T, D> where T : ITable where D : IUpdateDto
+    public class MapperUpdateDtoHelper<T, D> where T : IUpdatableTable where D : IUpdateDto
     {
         public void ToTable(T table, D dto)
         {
