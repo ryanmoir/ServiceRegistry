@@ -1,7 +1,7 @@
 ﻿namespace DiscoveryService.Entity
 {
-    using Microsoft.EntityFrameworkCore;
     using DiscoveryService.Entity.Tables;
+    using Microsoft.EntityFrameworkCore;
 
     public partial class DataContext : DbContext
     {

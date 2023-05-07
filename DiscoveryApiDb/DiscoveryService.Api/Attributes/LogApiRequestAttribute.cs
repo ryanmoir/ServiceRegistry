@@ -13,25 +13,13 @@
 
             var requestMeth = request.Method;
 
-            var headersStr = string.Empty;
-            for (int i = 0; i < request.Headers.Count(); i++)
-            {
-                var header = request.Headers.ElementAt(i);
-                if (i != 0)
-                {
-                    headersStr = headersStr + " || ";
-                }
-                headersStr = headersStr + header.Key + " - " + header.Value;
-            }
+            var headerDict = request.Headers.ToDictionary(x=> x.Key, x=> x.Value);
 
             var contentString = string.Empty;
             using (var content = new StreamContent(request.Body))
-            {
-                contentString = content.ReadAsStringAsync().Result;
-            }
+                contentString = await content.ReadAsStringAsync();
 
             var logger = Log.ForContext<LogApiRequestAttribute>();
-            ///do whatever u want with the request info
         }
     }
 }

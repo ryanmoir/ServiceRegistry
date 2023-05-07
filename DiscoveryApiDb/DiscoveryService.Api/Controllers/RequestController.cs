@@ -3,7 +3,6 @@
     using DiscoveryService.Api.Attributes;
     using DiscoveryService.Api.Helpers.Interface;
     using DiscoveryService.Business.Services.Interface;
-    using HttpRequestWrapper;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using System;
@@ -21,7 +20,7 @@
         public RequestController(ILogger<DiscoveryController> logger, IRequestService requestService, IControllerHelper controllerHelper)
         {
             this._logger = logger;
-            this.requestService= requestService;
+            this.requestService = requestService;
             this.controllerHelper = controllerHelper;
         }
 

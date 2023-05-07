@@ -15,7 +15,7 @@
         }
 
         public async Task<HttpResponseContainer> ProcessRequest(HttpRequest request, string ServiceName)
-        {          
+        {
             var serviceDetails = await discoveryService.Get(ServiceName);
             if (serviceDetails == null)
                 throw new Exception("No matching service found");

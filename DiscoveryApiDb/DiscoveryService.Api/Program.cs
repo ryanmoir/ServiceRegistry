@@ -1,6 +1,6 @@
+using DiscoveryService.Api;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
-using DiscoveryService.Api;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

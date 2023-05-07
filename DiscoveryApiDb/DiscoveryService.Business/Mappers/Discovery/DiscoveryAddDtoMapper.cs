@@ -3,7 +3,7 @@
     using DiscoveryService.Entity.Tables;
     using DiscoveryService.Models.Dto.Controllers.Discovery;
 
-    public class DiscoveryAddDtoMapper 
+    public class DiscoveryAddDtoMapper
     {
         public Discovery ToEntity(DiscoveryAddDto dto)
         {

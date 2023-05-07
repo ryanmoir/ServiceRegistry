@@ -1,7 +1,7 @@
 ﻿namespace DiscoveryService.Models.Dto.Interface
 {
-   public interface IAddDto
-   {
+    public interface IAddDto
+    {
         public long CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
     }

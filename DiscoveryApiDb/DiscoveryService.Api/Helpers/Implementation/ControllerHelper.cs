@@ -10,14 +10,10 @@
         public string CheckCorrolationAndRequestId(Guid CorrelationId, Guid RequestId)
         {
             if (CorrelationId == Guid.Empty)
-            {
                 return "missing corrolation id";
-            }
 
             if (RequestId == Guid.Empty)
-            {
                 return "missing request id";
-            }
 
             return string.Empty;
         }
@@ -41,7 +37,6 @@
         {
             return id.HasValue && id != 0 ? true : false;
         }
-
 
         public void SetUpReponseGuids(ControllerBase controllerBase, Guid corrolationGuid)
         {

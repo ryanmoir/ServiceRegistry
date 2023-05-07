@@ -13,7 +13,7 @@
             mapperHelper.ToDto(entity, dto);
 
             dto.Id = entity.Id;
-            dto.ServiceName= entity.ServiceName;
+            dto.ServiceName = entity.ServiceName;
             dto.GlobalAddress = entity.GlobalAddress;
             dto.LocalAddress = entity.LocalAddress;
 

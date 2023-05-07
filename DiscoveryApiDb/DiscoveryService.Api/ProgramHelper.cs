@@ -1,22 +1,22 @@
 ﻿namespace DiscoveryService.Api
 {
+    using DiscoveryService.Api.Helper;
+    using DiscoveryService.Api.Helpers.Interface;
+    using DiscoveryService.Business.Services.Implmentation;
+    using DiscoveryService.Business.Services.Interface;
+    using DiscoveryService.Entity;
+    using DiscoveryService.EntityAcceess.Repository.Implmentation;
+    using DiscoveryService.EntityAcceess.Repository.Interface;
+    using DiscoveryService.EntityAcceess.UnitOfWork.Implmentation;
+    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Mvc.Versioning;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using DiscoveryService.Entity;
     using Serilog;
     using Serilog.Core;
     using System;
-    using DiscoveryService.Api.Helper;
-    using DiscoveryService.Api.Helpers.Interface;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Implmentation;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
-    using DiscoveryService.EntityAcceess.Repository.Interface;
-    using DiscoveryService.Business.Services.Interface;
-    using DiscoveryService.EntityAcceess.Repository.Implmentation;
-    using DiscoveryService.Business.Services.Implmentation;
 
     public static class ProgramHelper
     {
