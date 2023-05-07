@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[Discovery]
 (
 	[Id] BIGINT IDENTITY(1,1) PRIMARY KEY, 
-    [CreationDate] DATE NOT NULL, 
+    [CreationDate] DATETIME NOT NULL, 
     [CreatedBy] BIGINT NOT NULL, 
-    [UpdateDate] DATE NULL, 
+    [UpdateDate] DATETIME NULL, 
     [UpdatedBy] BIGINT NULL, 
-    [DeletedDate] DATE NULL, 
+    [DeletedDate] DATETIME NULL, 
     [DeletedBy] BIGINT NULL, 
     [IsDeleted] BIT NOT NULL DEFAULT 0,
     [ServiceName] NVARCHAR(50) NOT NULL,

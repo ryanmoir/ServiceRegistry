@@ -14,14 +14,6 @@
         {
             dto.CreationDate = table.CreationDate;
             dto.CreatedBy = table.CreatedBy;
-
-            dto.UpdateDate = table.UpdateDate;
-            dto.UpdatedBy = table.UpdatedBy;
-
-            dto.DeletedDate = table.DeletedDate;
-            dto.DeletedBy = table.DeletedBy;
-
-            dto.IsDeleted = table.IsDeleted;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace DiscoveryService.Entity.Tables
 {
-    public class Discovery : ITable
+    public class Discovery : IUpdatableTable
     {
         [Required]
         public long Id { get; set; }
