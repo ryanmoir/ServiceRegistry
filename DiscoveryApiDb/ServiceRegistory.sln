@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRegistory.Api", "ServiceRegistory.Api\ServiceRegistory.Api.csproj", "{3434CFE5-B03A-48C5-BD1C-FDF18A12C324}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryService.Business", "DiscoveryService.Business\DiscoveryService.Business.csproj", "{CCA87AA7-C1DD-419F-BD63-D65F751D37B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRegistory.Business", "ServiceRegistory.Business\ServiceRegistory.Business.csproj", "{CCA87AA7-C1DD-419F-BD63-D65F751D37B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryService.Test", "DiscoveryService.Test\DiscoveryService.Test.csproj", "{D4428C50-A928-4D80-853E-54F8288039E7}"
 EndProject
