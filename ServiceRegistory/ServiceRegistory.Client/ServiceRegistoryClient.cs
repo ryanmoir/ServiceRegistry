@@ -5,14 +5,14 @@
     using HttpRequestWrapper;
     using System.Threading.Tasks;
 
-    public class DiscoveryClient : IDiscoveryClient, IRequestClient
+    public class ServiceRegistoryClient : IDiscoveryClient, IRequestClient
     {
         private HttpClientHelper clientHelper;
         private string baseUri;
         private string BuildBaseDiscoveryontrollerString { get => baseUri + "api/v1/Discovery/"; }
         private string BuildBaseRequestControllerString { get => baseUri + "api/v1/Request/"; }
 
-        public DiscoveryClient(string baseUri)
+        public ServiceRegistoryClient(string baseUri)
         {
             clientHelper = new HttpClientHelper();
             this.baseUri = baseUri;
