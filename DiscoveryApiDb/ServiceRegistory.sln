@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRegistory.Business",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryService.Test", "DiscoveryService.Test\DiscoveryService.Test.csproj", "{D4428C50-A928-4D80-853E-54F8288039E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscoveryService.Entity", "DiscoveryService.Entity\DiscoveryService.Entity.csproj", "{6556D27F-190F-4841-9499-10A1564569B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRegistory.Entity", "ServiceRegistory.Entity\ServiceRegistory.Entity.csproj", "{6556D27F-190F-4841-9499-10A1564569B2}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ServiceRegistory.Data", "ServiceRegistory.Data\ServiceRegistory.Data.sqlproj", "{2680C355-B186-4F4E-B8A3-6FCA9B9559C5}"
 EndProject

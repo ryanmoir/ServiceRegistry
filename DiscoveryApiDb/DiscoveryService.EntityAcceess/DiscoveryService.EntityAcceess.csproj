@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscoveryService.Entity\DiscoveryService.Entity.csproj" />
+    <ProjectReference Include="..\ServiceRegistory.Entity\ServiceRegistory.Entity.csproj" />
   </ItemGroup>
 
 </Project>
