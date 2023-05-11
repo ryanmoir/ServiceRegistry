@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscoveryService.EntityAcceess\DiscoveryService.EntityAcceess.csproj" />
+    <ProjectReference Include="..\ServiceRegistory.EntityAcceess\ServiceRegistory.EntityAcceess.csproj" />
     <ProjectReference Include="..\Models\DiscoveryService.Models.csproj" />
   </ItemGroup>
 
