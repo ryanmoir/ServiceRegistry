@@ -1,7 +1,7 @@
-﻿namespace DiscoveryService.EntityAcceess.UnitOfWork.Implmentation
+﻿namespace ServiceRegistory.EntityAcceess.UnitOfWork.Implmentation
 {
-    using DiscoveryService.Entity;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
+    using ServiceRegistory.Entity;
+    using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
 
     public class UnitOfWork : IUnitOfWork, IDisposable
     {

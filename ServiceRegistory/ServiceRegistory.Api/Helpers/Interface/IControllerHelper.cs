@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Api.Helpers.Interface
+﻿namespace ServiceRegistory.Api.Helpers.Interface
 {
-    using DiscoveryService.Models.Dto.Interface;
+    using ServiceRegistory.Models.Dto.Interface;
     using Microsoft.AspNetCore.Mvc;
     using System;
 

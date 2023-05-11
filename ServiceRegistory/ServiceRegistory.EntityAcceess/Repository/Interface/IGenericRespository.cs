@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.EntityAcceess.Repository.Interface
+﻿namespace ServiceRegistory.EntityAcceess.Repository.Interface
 {
     public interface IGenericRespository<T> where T : class
     {

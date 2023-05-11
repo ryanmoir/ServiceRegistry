@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Models.Dto.Interface
+﻿namespace ServiceRegistory.Models.Dto.Interface
 {
     public interface IValidatableDto
     {

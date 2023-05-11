@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.EntityAcceess.Repository.Interface
+﻿namespace ServiceRegistory.EntityAcceess.Repository.Interface
 {
-    using DiscoveryService.Entity.Tables;
+    using ServiceRegistory.Entity.Tables;
 
     public interface IDiscoveryRespository : IGenericRespository<Discovery>
     {

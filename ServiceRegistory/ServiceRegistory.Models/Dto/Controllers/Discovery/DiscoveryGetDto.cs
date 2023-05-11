@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Models.Dto.Controllers.Discovery
+﻿namespace ServiceRegistory.Models.Dto.Controllers.Discovery
 {
-    using DiscoveryService.Models.Dto.Interface;
+    using ServiceRegistory.Models.Dto.Interface;
 
     public class DiscoveryGetDto : IGetDto
     {

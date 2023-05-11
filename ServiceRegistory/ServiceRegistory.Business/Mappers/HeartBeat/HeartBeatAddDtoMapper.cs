@@ -1,6 +1,6 @@
-﻿using DiscoveryService.Models.Dto.Controllers.HeartBeat;
+﻿using ServiceRegistory.Models.Dto.Controllers.HeartBeat;
 
-namespace DiscoveryService.Business.Mappers.HeartBeat
+namespace ServiceRegistory.Business.Mappers.HeartBeat
 {
     public class HeartBeatAddDtoMapper
     {

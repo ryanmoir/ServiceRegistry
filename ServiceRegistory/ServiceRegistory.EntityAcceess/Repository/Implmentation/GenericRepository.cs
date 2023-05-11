@@ -1,8 +1,8 @@
-﻿namespace DiscoveryService.EntityAcceess.Repository.Implmentation
+﻿namespace ServiceRegistory.EntityAcceess.Repository.Implmentation
 {
-    using DiscoveryService.Entity;
-    using DiscoveryService.EntityAcceess.Repository.Interface;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
+    using ServiceRegistory.Entity;
+    using ServiceRegistory.EntityAcceess.Repository.Interface;
+    using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
     using Microsoft.EntityFrameworkCore;
 
     public class GenericRepository<T> : IGenericRespository<T> where T : class

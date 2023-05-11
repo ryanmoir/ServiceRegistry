@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Models.Dto.Controllers.Discovery
+﻿namespace ServiceRegistory.Models.Dto.Controllers.Discovery
 {
-    using DiscoveryService.Models.Dto.Base;
+    using ServiceRegistory.Models.Dto.Base;
 
     public class DiscoveryAddDto : BaseAddDto
     {

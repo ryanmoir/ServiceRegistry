@@ -1,10 +1,10 @@
-﻿using DiscoveryService.Business.Mappers.HeartBeat;
-using DiscoveryService.Business.Services.Interface;
-using DiscoveryService.EntityAcceess.Repository.Interface;
-using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
-using DiscoveryService.Models.Dto.Controllers.HeartBeat;
+﻿using ServiceRegistory.Business.Mappers.HeartBeat;
+using ServiceRegistory.Business.Services.Interface;
+using ServiceRegistory.EntityAcceess.Repository.Interface;
+using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
+using ServiceRegistory.Models.Dto.Controllers.HeartBeat;
 
-namespace DiscoveryService.Business.Services.Implmentation
+namespace ServiceRegistory.Business.Services.Implmentation
 {
     public class HeartBeatService : IHeartBeatService
     {

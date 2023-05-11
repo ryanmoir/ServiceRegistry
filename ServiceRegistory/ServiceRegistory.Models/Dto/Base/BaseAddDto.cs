@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Models.Dto.Base
+﻿namespace ServiceRegistory.Models.Dto.Base
 {
-    using DiscoveryService.Models.Dto.Interface;
+    using ServiceRegistory.Models.Dto.Interface;
 
     public class BaseAddDto : IAddDto, IValidatableDto
     {

@@ -1,9 +1,9 @@
-﻿namespace DiscoveryService.Business.Services.Implmentation
+﻿namespace ServiceRegistory.Business.Services.Implmentation
 {
-    using global::DiscoveryService.Business.Mappers.Discovery;
-    using global::DiscoveryService.Business.Services.Interface;
-    using global::DiscoveryService.EntityAcceess.Repository.Interface;
-    using global::DiscoveryService.EntityAcceess.UnitOfWork.Interface;
+    using global::ServiceRegistory.Business.Mappers.Discovery;
+    using global::ServiceRegistory.Business.Services.Interface;
+    using global::ServiceRegistory.EntityAcceess.Repository.Interface;
+    using global::ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
     using System.Threading.Tasks;
 
     public class DiscoveryService : IDiscoveryService

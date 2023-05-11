@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Entity.Tables
+﻿namespace ServiceRegistory.Entity.Tables
 {
     using System.ComponentModel.DataAnnotations;
 

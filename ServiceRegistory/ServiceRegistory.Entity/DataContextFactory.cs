@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Entity
+﻿namespace ServiceRegistory.Entity
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Design;

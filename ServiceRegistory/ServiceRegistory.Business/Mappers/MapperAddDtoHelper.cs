@@ -1,7 +1,7 @@
-﻿namespace DiscoveryService.Business.Mappers
+﻿namespace ServiceRegistory.Business.Mappers
 {
-    using DiscoveryService.Entity.Tables;
-    using DiscoveryService.Models.Dto.Interface;
+    using ServiceRegistory.Entity.Tables;
+    using ServiceRegistory.Models.Dto.Interface;
 
     /// <summary>
     /// used to do common IAddDto Mapper code

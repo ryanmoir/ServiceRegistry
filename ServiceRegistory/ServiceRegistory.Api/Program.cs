@@ -1,4 +1,4 @@
-using DiscoveryService.Api;
+using ServiceRegistory.Api;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Serilog;

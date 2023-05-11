@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Entity
+﻿namespace ServiceRegistory.Entity
 {
-    using DiscoveryService.Entity.Tables;
+    using ServiceRegistory.Entity.Tables;
     using Microsoft.EntityFrameworkCore;
 
     public partial class DataContext : DbContext

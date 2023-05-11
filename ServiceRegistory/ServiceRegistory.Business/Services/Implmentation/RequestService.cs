@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Business.Services.Implmentation
+﻿namespace ServiceRegistory.Business.Services.Implmentation
 {
-    using global::DiscoveryService.Business.Services.Interface;
+    using global::ServiceRegistory.Business.Services.Interface;
     using HttpRequestWrapper;
     using Microsoft.AspNetCore.Http;
     using System.Threading.Tasks;

@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Api.Attributes
+﻿namespace ServiceRegistory.Api.Attributes
 {
     using Microsoft.AspNetCore.Mvc.Filters;
     using Serilog;

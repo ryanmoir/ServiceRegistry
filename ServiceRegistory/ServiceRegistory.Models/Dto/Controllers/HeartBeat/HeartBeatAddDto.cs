@@ -1,7 +1,7 @@
-﻿using DiscoveryService.Models.Dto.Base;
+﻿using ServiceRegistory.Models.Dto.Base;
 using System.ComponentModel.DataAnnotations;
 
-namespace DiscoveryService.Models.Dto.Controllers.HeartBeat
+namespace ServiceRegistory.Models.Dto.Controllers.HeartBeat
 {
     public class HeartBeatAddDto : BaseAddDto
     {

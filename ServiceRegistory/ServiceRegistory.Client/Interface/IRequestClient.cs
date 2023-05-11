@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Client.Interface
+﻿namespace ServiceRegistory.Client.Interface
 {
     using HttpRequestWrapper;
 

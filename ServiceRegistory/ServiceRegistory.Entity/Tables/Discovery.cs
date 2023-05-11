@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DiscoveryService.Entity.Tables
+namespace ServiceRegistory.Entity.Tables
 {
     public class Discovery : IUpdatableTable
     {

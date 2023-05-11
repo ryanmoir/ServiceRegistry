@@ -1,7 +1,7 @@
-﻿namespace DiscoveryService.Client
+﻿namespace ServiceRegistory.Client
 {
-    using DiscoveryService.Client.Interface;
-    using DiscoveryService.Models.Dto.Controllers.Discovery;
+    using ServiceRegistory.Client.Interface;
+    using ServiceRegistory.Models.Dto.Controllers.Discovery;
     using HttpRequestWrapper;
     using System.Threading.Tasks;
 

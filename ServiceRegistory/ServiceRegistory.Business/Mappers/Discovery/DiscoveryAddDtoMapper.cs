@@ -1,7 +1,7 @@
-﻿namespace DiscoveryService.Business.Mappers.Discovery
+﻿namespace ServiceRegistory.Business.Mappers.Discovery
 {
-    using DiscoveryService.Entity.Tables;
-    using DiscoveryService.Models.Dto.Controllers.Discovery;
+    using ServiceRegistory.Entity.Tables;
+    using ServiceRegistory.Models.Dto.Controllers.Discovery;
 
     public class DiscoveryAddDtoMapper
     {

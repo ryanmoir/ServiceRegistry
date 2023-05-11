@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Entity.Base
+﻿namespace ServiceRegistory.Entity.Base
 {
     public class BaseTable
     {

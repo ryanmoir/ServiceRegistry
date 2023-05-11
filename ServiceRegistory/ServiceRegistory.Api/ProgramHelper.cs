@@ -1,14 +1,14 @@
-﻿namespace DiscoveryService.Api
+﻿namespace ServiceRegistory.Api
 {
-    using DiscoveryService.Api.Helper;
-    using DiscoveryService.Api.Helpers.Interface;
-    using DiscoveryService.Business.Services.Implmentation;
-    using DiscoveryService.Business.Services.Interface;
-    using DiscoveryService.Entity;
-    using DiscoveryService.EntityAcceess.Repository.Implmentation;
-    using DiscoveryService.EntityAcceess.Repository.Interface;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Implmentation;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
+    using ServiceRegistory.Api.Helper;
+    using ServiceRegistory.Api.Helpers.Interface;
+    using ServiceRegistory.Business.Services.Implmentation;
+    using ServiceRegistory.Business.Services.Interface;
+    using ServiceRegistory.Entity;
+    using ServiceRegistory.EntityAcceess.Repository.Implmentation;
+    using ServiceRegistory.EntityAcceess.Repository.Interface;
+    using ServiceRegistory.EntityAcceess.UnitOfWork.Implmentation;
+    using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Mvc.Versioning;
     using Microsoft.EntityFrameworkCore;

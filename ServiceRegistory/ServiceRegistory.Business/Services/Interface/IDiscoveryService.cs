@@ -1,8 +1,8 @@
-﻿namespace DiscoveryService.Business.Services.Interface
+﻿namespace ServiceRegistory.Business.Services.Interface
 {
-    using DiscoveryService.EntityAcceess.Repository.Interface;
-    using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
-    using DiscoveryService.Models.Dto.Controllers.Discovery;
+    using ServiceRegistory.EntityAcceess.Repository.Interface;
+    using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
+    using ServiceRegistory.Models.Dto.Controllers.Discovery;
 
     public interface IDiscoveryService
     {

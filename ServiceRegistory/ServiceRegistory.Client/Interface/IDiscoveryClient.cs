@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.Client.Interface
+﻿namespace ServiceRegistory.Client.Interface
 {
-    using DiscoveryService.Models.Dto.Controllers.Discovery;
+    using ServiceRegistory.Models.Dto.Controllers.Discovery;
     using HttpRequestWrapper;
 
     /// <summary>

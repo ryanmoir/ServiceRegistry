@@ -1,8 +1,8 @@
-﻿namespace DiscoveryService.Api.Controllers
+﻿namespace ServiceRegistory.Api.Controllers
 {
-    using DiscoveryService.Api.Attributes;
-    using DiscoveryService.Api.Helpers.Interface;
-    using DiscoveryService.Business.Services.Interface;
+    using ServiceRegistory.Api.Attributes;
+    using ServiceRegistory.Api.Helpers.Interface;
+    using ServiceRegistory.Business.Services.Interface;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using System;

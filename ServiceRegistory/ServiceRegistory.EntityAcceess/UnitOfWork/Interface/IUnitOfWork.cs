@@ -1,6 +1,6 @@
-﻿namespace DiscoveryService.EntityAcceess.UnitOfWork.Interface
+﻿namespace ServiceRegistory.EntityAcceess.UnitOfWork.Interface
 {
-    using DiscoveryService.Entity;
+    using ServiceRegistory.Entity;
 
     public interface IUnitOfWork
     {

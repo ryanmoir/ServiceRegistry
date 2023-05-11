@@ -1,8 +1,8 @@
-﻿using DiscoveryService.Entity.Tables;
-using DiscoveryService.EntityAcceess.Repository.Interface;
-using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
+﻿using ServiceRegistory.Entity.Tables;
+using ServiceRegistory.EntityAcceess.Repository.Interface;
+using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
 
-namespace DiscoveryService.EntityAcceess.Repository.Implmentation
+namespace ServiceRegistory.EntityAcceess.Repository.Implmentation
 {
     public class HeartBeatRespository : GenericRepository<HeartBeat>, IHeartBeatRespository
     {

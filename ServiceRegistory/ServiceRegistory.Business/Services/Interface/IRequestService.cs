@@ -1,4 +1,4 @@
-﻿namespace DiscoveryService.Business.Services.Interface
+﻿namespace ServiceRegistory.Business.Services.Interface
 {
     using HttpRequestWrapper;
     using Microsoft.AspNetCore.Http;

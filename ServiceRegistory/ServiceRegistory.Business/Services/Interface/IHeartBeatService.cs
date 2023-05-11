@@ -1,8 +1,8 @@
-﻿using DiscoveryService.EntityAcceess.Repository.Interface;
-using DiscoveryService.EntityAcceess.UnitOfWork.Interface;
-using DiscoveryService.Models.Dto.Controllers.HeartBeat;
+﻿using ServiceRegistory.EntityAcceess.Repository.Interface;
+using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
+using ServiceRegistory.Models.Dto.Controllers.HeartBeat;
 
-namespace DiscoveryService.Business.Services.Interface
+namespace ServiceRegistory.Business.Services.Interface
 {
     public interface IHeartBeatService
     {
