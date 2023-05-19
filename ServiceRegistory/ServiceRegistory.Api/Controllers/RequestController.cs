@@ -13,11 +13,11 @@
     [ApiVersion("1.0")]
     public class RequestController : ControllerBase
     {
-        private readonly ILogger<DiscoveryController> _logger;
+        private readonly ILogger<RequestController> _logger;
         private readonly IRequestService requestService;
         private readonly IControllerHelper controllerHelper;
 
-        public RequestController(ILogger<DiscoveryController> logger, IRequestService requestService, IControllerHelper controllerHelper)
+        public RequestController(ILogger<RequestController> logger, IRequestService requestService, IControllerHelper controllerHelper)
         {
             this._logger = logger;
             this.requestService = requestService;

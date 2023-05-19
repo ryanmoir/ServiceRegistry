@@ -5,11 +5,11 @@
     using HttpRequestWrapper;
     using System.Threading.Tasks;
 
-    public class ServiceRegistoryClient : IDiscoveryClient, IRequestClient
+    public class ServiceRegistoryClient : IRegistoryClient, IRequestClient
     {
         private HttpClientHelper clientHelper;
         private string baseUri;
-        private string BuildBaseDiscoveryontrollerString { get => baseUri + "api/v1/Discovery/"; }
+        private string BuildBaseRegistoryControllerString { get => baseUri + "api/v1/Registory/"; }
         private string BuildBaseRequestControllerString { get => baseUri + "api/v1/Request/"; }
 
         public ServiceRegistoryClient(string baseUri)
@@ -18,38 +18,38 @@
             this.baseUri = baseUri;
         }
 
-        public async Task<HttpResponseContainer> DiscoveryAdd(DiscoveryAddDto discoveryAddDto)
+        public async Task<HttpResponseContainer> RegistoryAdd(DiscoveryAddDto discoveryAddDto)
         {
-            return await clientHelper.SendAsync<DiscoveryAddDto>(MakeDiscoveryAdd(discoveryAddDto));
+            return await clientHelper.SendAsync<DiscoveryAddDto>(MakeRegistoryAdd(discoveryAddDto));
         }
-        public async Task<HttpResponseContainer> DiscoveryDelete(long discoveryId)
+        public async Task<HttpResponseContainer> RegistoryDelete(long discoveryId)
         {
-            return await clientHelper.SendAsync(MakeDiscoveryDelete(discoveryId));
+            return await clientHelper.SendAsync(MakeRegistoryDelete(discoveryId));
         }
-        public async Task<HttpResponseContainer> DiscoveryGet(long discoveryId)
+        public async Task<HttpResponseContainer> RegistoryGet(long discoveryId)
         {
-            return await clientHelper.SendAsync<DiscoveryGetDto>(MakeDiscoveryGet(discoveryId));
+            return await clientHelper.SendAsync<DiscoveryGetDto>(MakeRegistoryGet(discoveryId));
         }
-        public async Task<HttpResponseContainer> DiscoveryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
+        public async Task<HttpResponseContainer> RegistoryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
         {
-            return await clientHelper.SendAsync<DiscoveryUpdateDto>(MakeDiscoveryUpdate(discoveryUpdateDto));
+            return await clientHelper.SendAsync<DiscoveryUpdateDto>(MakeRegistoryUpdate(discoveryUpdateDto));
         }
 
-        public RequestWrapper MakeDiscoveryAdd(DiscoveryAddDto discoveryAddDto)
+        public RequestWrapper MakeRegistoryAdd(DiscoveryAddDto discoveryAddDto)
         {
-            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Add"), discoveryAddDto);
+            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseRegistoryControllerString + "Add"), discoveryAddDto);
         }
-        public RequestWrapper MakeDiscoveryDelete(long discoveryId)
+        public RequestWrapper MakeRegistoryDelete(long discoveryId)
         {
-            return new RequestWrapper(HttpMethod.Delete, new Uri(BuildBaseDiscoveryontrollerString + $"Delete?serviceId={discoveryId}"));
+            return new RequestWrapper(HttpMethod.Delete, new Uri(BuildBaseRegistoryControllerString + $"Delete?serviceId={discoveryId}"));
         }
-        public RequestWrapper MakeDiscoveryGet(long discoveryId)
+        public RequestWrapper MakeRegistoryGet(long discoveryId)
         {
-            return new RequestWrapper(HttpMethod.Get, new Uri(BuildBaseDiscoveryontrollerString + $"Get?serviceId={discoveryId}"));
+            return new RequestWrapper(HttpMethod.Get, new Uri(BuildBaseRegistoryControllerString + $"Get?serviceId={discoveryId}"));
         }
-        public RequestWrapper MakeDiscoveryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
+        public RequestWrapper MakeRegistoryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
         {
-            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseDiscoveryontrollerString + "Update"), discoveryUpdateDto);
+            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseRegistoryControllerString + "Update"), discoveryUpdateDto);
         }
 
         public async Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper requestToFoward, string serviceName)

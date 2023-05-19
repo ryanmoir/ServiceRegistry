@@ -13,13 +13,13 @@ namespace ServiceRegistory.Api.Controllers
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
-    public class DiscoveryController : ControllerBase
+    public class RegistoryController : ControllerBase
     {
-        private readonly ILogger<DiscoveryController> _logger;
+        private readonly ILogger<RegistoryController> _logger;
         private readonly IDiscoveryService discoveryService;
         private readonly IControllerHelper controllerHelper;
 
-        public DiscoveryController(ILogger<DiscoveryController> logger, IDiscoveryService discoveryService, IControllerHelper controllerHelper)
+        public RegistoryController(ILogger<RegistoryController> logger, IDiscoveryService discoveryService, IControllerHelper controllerHelper)
         {
             this._logger = logger;
             this.discoveryService = discoveryService;
