@@ -8,14 +8,12 @@
     /// </summary>
     public interface IRegistoryClient
     {
-        Task<HttpResponseContainer> RegistoryAdd(DiscoveryAddDto discoveryAddDto);
-        Task<HttpResponseContainer> RegistoryDelete(long discoveryId);
-        Task<HttpResponseContainer> RegistoryUpdate(DiscoveryUpdateDto discoveryUpdateDto);
-        Task<HttpResponseContainer> RegistoryGet(long discoveryId);
+        Task<HttpResponseContainer> RegistoryAdd(RegistoryAddDto registoryAddDto);
+        Task<HttpResponseContainer> RegistoryDelete(long registoryId);
+        Task<HttpResponseContainer> RegistoryGet(long registoryId);
 
-        RequestWrapper MakeRegistoryAdd(DiscoveryAddDto discoveryAddDto);
-        RequestWrapper MakeRegistoryDelete(long discoveryId);
-        RequestWrapper MakeRegistoryGet(long discoveryId);
-        RequestWrapper MakeRegistoryUpdate(DiscoveryUpdateDto discoveryUpdateDto);
+        RequestWrapper MakeRegistoryAdd(RegistoryAddDto registoryAddDto);
+        RequestWrapper MakeRegistoryDelete(long registoryId);
+        RequestWrapper MakeRegistoryGet(long registoryId);
     }
 }

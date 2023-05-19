@@ -10,7 +10,6 @@
 
         }
 
-        public DbSet<Discovery> Discovery { get; set; }
         public DbSet<Registory> Registory { get; set; }
     }
 }

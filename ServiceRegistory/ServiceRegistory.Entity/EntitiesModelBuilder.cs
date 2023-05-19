@@ -7,7 +7,6 @@
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Discovery>().HasKey(t => t.Id);
             modelBuilder.Entity<Registory>().HasKey(t => t.Id);
         }
     }
