@@ -1,4 +1,5 @@
-﻿using ServiceRegistory.Models.Dto.Controllers.Discovery;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ServiceRegistory.Models.Dto.Controllers.Discovery;
 
 namespace ServiceRegistory.Business.Mappers.Registory
 {
@@ -8,9 +9,8 @@ namespace ServiceRegistory.Business.Mappers.Registory
         {
             var entity = new Entity.Tables.Registory();
 
-            var mapperHelper = new MapperAddDtoHelper<Entity.Tables.Registory, RegistoryAddDto>();
-            mapperHelper.ToTable(entity, dto);
-
+            entity.CreationDate = dto.CreatedOn;
+            entity.CreatedBy = dto.CreatedBy;
             entity.ServiceName = dto.ServiceName;
             entity.GlobalAddress = dto.GlobalAddress;
             entity.LocalAddress = dto.LocalAddress;
