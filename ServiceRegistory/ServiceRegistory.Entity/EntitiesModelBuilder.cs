@@ -9,6 +9,7 @@
         {
             modelBuilder.Entity<Discovery>().HasKey(t => t.Id);
             modelBuilder.Entity<HeartBeat>().HasKey(t => t.Id);
+            modelBuilder.Entity<Registory>().HasKey(t => t.Id);
         }
     }
 }
