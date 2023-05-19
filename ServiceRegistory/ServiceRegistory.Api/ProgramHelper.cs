@@ -44,14 +44,12 @@
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(x => new UnitOfWork(new DataContextFactory(optionBuilder.Options)));
             builder.Services.AddScoped<IDiscoveryRespository, DiscoveryRespository>();
             builder.Services.AddScoped<IRegistoryRepository, RegistoryRespository>();
-            builder.Services.AddScoped<IHeartBeatRespository, HeartBeatRespository>();
 
             builder.Services.AddScoped<IControllerHelper, ControllerHelper>(x => new ControllerHelper());
 
             builder.Services.AddScoped<IDiscoveryService, DiscoveryService>();
             builder.Services.AddScoped<IRegistoryService, RegistoryService>();
             builder.Services.AddScoped<IRequestService, RequestService>();
-            builder.Services.AddScoped<IHeartBeatService, HeartBeatService>();
 
             return builder;
         }
