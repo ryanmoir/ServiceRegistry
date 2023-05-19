@@ -16,6 +16,6 @@
 
         public int Port { get; set; }
 
-        public ServiceStatus ServiceStatus { get; set; }
+        public string ServiceStatus { get; set; }
     }
 }
