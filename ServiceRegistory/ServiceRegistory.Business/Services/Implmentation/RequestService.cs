@@ -1,22 +1,23 @@
 ﻿namespace ServiceRegistory.Business.Services.Implmentation
 {
-    using global::ServiceRegistory.Business.Services.Interface;
     using HttpRequestWrapper;
     using Microsoft.AspNetCore.Http;
+    using ServiceRegistory.Business.Services.Interface;
+    using ServiceRegistory.EntityAcceess.Repository.Interface;
     using System.Threading.Tasks;
 
     public class RequestService : IRequestService
     {
-        private readonly IDiscoveryService discoveryService;
+        private readonly IRegistoryRepository RegistoryRepository;
 
-        public RequestService(IDiscoveryService _discoveryService)
+        public RequestService(IRegistoryRepository registoryService)
         {
-            discoveryService = _discoveryService;
+            RegistoryRepository = registoryService;
         }
 
         public async Task<HttpResponseContainer> ProcessRequest(HttpRequest request, string ServiceName)
         {
-            var serviceDetails = await discoveryService.Get(ServiceName);
+            var serviceDetails = await RegistoryRepository.Get(ServiceName);
             if (serviceDetails == null)
                 throw new Exception("No matching service found");
 
