@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Discovery.sql" />
-    <Build Include="dbo\Tables\HeartBeat.sql" />
     <Build Include="dbo\Tables\Registory.sql" />
   </ItemGroup>
 </Project>
