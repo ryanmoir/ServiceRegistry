@@ -38,16 +38,18 @@
             });
 
             var optionBuilder = new DbContextOptionsBuilder<DataContext>();
-            optionBuilder.UseSqlServer(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=Discovery;TrustServerCertificate=Yes;Integrated Security=False;User ID=test;Password=password;");
+            optionBuilder.UseSqlServer(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=ServiceRegistory;TrustServerCertificate=Yes;Integrated Security=False;User ID=test;Password=password;");
             optionBuilder.EnableSensitiveDataLogging();
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(x => new UnitOfWork(new DataContextFactory(optionBuilder.Options)));
             builder.Services.AddScoped<IDiscoveryRespository, DiscoveryRespository>();
+            builder.Services.AddScoped<IRegistoryRepository, RegistoryRespository>();
             builder.Services.AddScoped<IHeartBeatRespository, HeartBeatRespository>();
 
             builder.Services.AddScoped<IControllerHelper, ControllerHelper>(x => new ControllerHelper());
 
             builder.Services.AddScoped<IDiscoveryService, DiscoveryService>();
+            builder.Services.AddScoped<IRegistoryService, RegistoryService>();
             builder.Services.AddScoped<IRequestService, RequestService>();
             builder.Services.AddScoped<IHeartBeatService, HeartBeatService>();
 
