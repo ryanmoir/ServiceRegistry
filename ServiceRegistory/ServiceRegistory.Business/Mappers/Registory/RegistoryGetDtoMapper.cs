@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using ServiceRegistory.Models.Dto.Controllers.Discovery;
+﻿using ServiceRegistory.Models.Dto.Controllers.Discovery;
 
 namespace ServiceRegistory.Business.Mappers.Registory
 {

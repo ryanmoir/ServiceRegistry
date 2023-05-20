@@ -1,7 +1,7 @@
 ﻿namespace ServiceRegistory.Client.Interface
 {
-    using ServiceRegistory.Models.Dto.Controllers.Discovery;
     using HttpRequestWrapper;
+    using ServiceRegistory.Models.Dto.Controllers.Discovery;
 
     /// <summary>
     /// The sending and making split into 2 to allow support for sending the request to a third part e.g a discovery service

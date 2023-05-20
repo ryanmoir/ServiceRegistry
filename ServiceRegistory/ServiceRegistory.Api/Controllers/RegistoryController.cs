@@ -1,12 +1,12 @@
 namespace ServiceRegistory.Api.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Routing;
+    using Microsoft.Extensions.Logging;
     using ServiceRegistory.Api.Attributes;
     using ServiceRegistory.Api.Helpers.Interface;
     using ServiceRegistory.Business.Services.Interface;
     using ServiceRegistory.Models.Dto.Controllers.Discovery;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Routing;
-    using Microsoft.Extensions.Logging;
     using System;
     using System.Threading.Tasks;
 

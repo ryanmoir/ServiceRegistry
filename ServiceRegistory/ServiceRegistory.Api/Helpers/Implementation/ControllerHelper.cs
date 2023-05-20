@@ -1,8 +1,8 @@
 ﻿namespace ServiceRegistory.Api.Helper
 {
+    using Microsoft.AspNetCore.Mvc;
     using ServiceRegistory.Api.Helpers.Interface;
     using ServiceRegistory.Models.Dto.Interface;
-    using Microsoft.AspNetCore.Mvc;
     using System;
 
     public class ControllerHelper : IControllerHelper

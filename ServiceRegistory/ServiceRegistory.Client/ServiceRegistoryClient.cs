@@ -1,8 +1,8 @@
 ﻿namespace ServiceRegistory.Client
 {
+    using HttpRequestWrapper;
     using ServiceRegistory.Client.Interface;
     using ServiceRegistory.Models.Dto.Controllers.Discovery;
-    using HttpRequestWrapper;
     using System.Threading.Tasks;
 
     public class ServiceRegistoryClient : IRegistoryClient, IRequestClient

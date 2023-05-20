@@ -1,5 +1,12 @@
 ﻿namespace ServiceRegistory.Api
 {
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Mvc.Versioning;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Serilog;
+    using Serilog.Core;
     using ServiceRegistory.Api.Helper;
     using ServiceRegistory.Api.Helpers.Interface;
     using ServiceRegistory.Business.Services.Implmentation;
@@ -9,13 +16,6 @@
     using ServiceRegistory.EntityAcceess.Repository.Interface;
     using ServiceRegistory.EntityAcceess.UnitOfWork.Implmentation;
     using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Mvc.Versioning;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Serilog;
-    using Serilog.Core;
     using System;
 
     public static class ProgramHelper

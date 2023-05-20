@@ -1,7 +1,7 @@
 ﻿namespace ServiceRegistory.Entity
 {
-    using ServiceRegistory.Entity.Tables;
     using Microsoft.EntityFrameworkCore;
+    using ServiceRegistory.Entity.Tables;
 
     partial class DataContext : DbContext
     {
