@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ServiceRegistory.Api.Attributes;
+using ServiceRegistory.Business.Services.Interface;
+using System;
 
 namespace ServiceRegistory.Api.Controllers
 {
@@ -9,11 +11,13 @@ namespace ServiceRegistory.Api.Controllers
     [ApiVersion("1.0")]
     public class HeartBeatController : Controller
     {
+        private readonly IHeartBeatService HeartBeatService;
         private readonly ILogger<HeartBeatController> Logger;
 
-        public HeartBeatController(ILogger<HeartBeatController> logger)
+        public HeartBeatController(ILogger<HeartBeatController> logger, IHeartBeatService heartBeatService)
         {
-            this.Logger = logger;
+            Logger = logger;
+            HeartBeatService = heartBeatService;
         }
 
         [HttpGet]
@@ -23,6 +27,15 @@ namespace ServiceRegistory.Api.Controllers
         public IActionResult Get()
         {
             return Ok();
+        }
+
+        [HttpPost]
+        [LogApiRequest]
+        [ApiVersion("1.0")]
+        [Route("")]
+        public IActionResult CheckForHeartBeats()
+        {
+            throw new NotImplementedException();
         }
     }
 }
