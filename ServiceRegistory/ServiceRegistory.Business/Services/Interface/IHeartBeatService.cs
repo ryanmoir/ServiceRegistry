@@ -2,6 +2,6 @@
 {
     public interface IHeartBeatService
     {
-        public void CheckForHeartBeats();
+        public Task<List<KeyValuePair<long, Exception>>> CheckForHeartBeats();
     }
 }

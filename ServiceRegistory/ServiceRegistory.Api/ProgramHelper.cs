@@ -48,6 +48,7 @@
 
             builder.Services.AddScoped<IRegistoryService, RegistoryService>();
             builder.Services.AddScoped<IRequestService, RequestService>();
+            builder.Services.AddScoped<IHeartBeatService, HeartBeatService>();
 
             return builder;
         }
