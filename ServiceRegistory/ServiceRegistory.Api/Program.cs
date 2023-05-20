@@ -1,7 +1,7 @@
-using ServiceRegistory.Api;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using ServiceRegistory.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -8,9 +8,8 @@ namespace ServiceRegistory.Business.Mappers.Registory
         {
             var entity = new Entity.Tables.Registory();
 
-            var mapperHelper = new MapperAddDtoHelper<Entity.Tables.Registory, RegistoryAddDto>();
-            mapperHelper.ToTable(entity, dto);
-
+            entity.CreationDate = dto.CreatedOn;
+            entity.CreatedBy = dto.CreatedBy;
             entity.ServiceName = dto.ServiceName;
             entity.GlobalAddress = dto.GlobalAddress;
             entity.LocalAddress = dto.LocalAddress;

@@ -1,8 +1,8 @@
 ﻿namespace ServiceRegistory.Client
 {
+    using HttpRequestWrapper;
     using ServiceRegistory.Client.Interface;
     using ServiceRegistory.Models.Dto.Controllers.Discovery;
-    using HttpRequestWrapper;
     using System.Threading.Tasks;
 
     public class ServiceRegistoryClient : IRegistoryClient, IRequestClient
@@ -18,38 +18,30 @@
             this.baseUri = baseUri;
         }
 
-        public async Task<HttpResponseContainer> RegistoryAdd(DiscoveryAddDto discoveryAddDto)
+        public async Task<HttpResponseContainer> RegistoryAdd(RegistoryAddDto registoryAddDto)
         {
-            return await clientHelper.SendAsync<DiscoveryAddDto>(MakeRegistoryAdd(discoveryAddDto));
+            return await clientHelper.SendAsync<RegistoryAddDto>(MakeRegistoryAdd(registoryAddDto));
         }
-        public async Task<HttpResponseContainer> RegistoryDelete(long discoveryId)
+        public async Task<HttpResponseContainer> RegistoryDelete(long registoryId)
         {
-            return await clientHelper.SendAsync(MakeRegistoryDelete(discoveryId));
+            return await clientHelper.SendAsync(MakeRegistoryDelete(registoryId));
         }
-        public async Task<HttpResponseContainer> RegistoryGet(long discoveryId)
+        public async Task<HttpResponseContainer> RegistoryGet(long registoryId)
         {
-            return await clientHelper.SendAsync<DiscoveryGetDto>(MakeRegistoryGet(discoveryId));
-        }
-        public async Task<HttpResponseContainer> RegistoryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
-        {
-            return await clientHelper.SendAsync<DiscoveryUpdateDto>(MakeRegistoryUpdate(discoveryUpdateDto));
+            return await clientHelper.SendAsync<RegistoryAddDto>(MakeRegistoryGet(registoryId));
         }
 
-        public RequestWrapper MakeRegistoryAdd(DiscoveryAddDto discoveryAddDto)
+        public RequestWrapper MakeRegistoryAdd(RegistoryAddDto registoryAddDto)
         {
-            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseRegistoryControllerString + "Add"), discoveryAddDto);
+            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseRegistoryControllerString + "Add"), registoryAddDto);
         }
-        public RequestWrapper MakeRegistoryDelete(long discoveryId)
+        public RequestWrapper MakeRegistoryDelete(long registoryId)
         {
-            return new RequestWrapper(HttpMethod.Delete, new Uri(BuildBaseRegistoryControllerString + $"Delete?serviceId={discoveryId}"));
+            return new RequestWrapper(HttpMethod.Delete, new Uri(BuildBaseRegistoryControllerString + $"Delete?serviceId={registoryId}"));
         }
-        public RequestWrapper MakeRegistoryGet(long discoveryId)
+        public RequestWrapper MakeRegistoryGet(long registoryId)
         {
-            return new RequestWrapper(HttpMethod.Get, new Uri(BuildBaseRegistoryControllerString + $"Get?serviceId={discoveryId}"));
-        }
-        public RequestWrapper MakeRegistoryUpdate(DiscoveryUpdateDto discoveryUpdateDto)
-        {
-            return new RequestWrapper(HttpMethod.Post, new Uri(BuildBaseRegistoryControllerString + "Update"), discoveryUpdateDto);
+            return new RequestWrapper(HttpMethod.Get, new Uri(BuildBaseRegistoryControllerString + $"Get?serviceId={registoryId}"));
         }
 
         public async Task<HttpResponseContainer> ProcessRequest<T>(RequestWrapper requestToFoward, string serviceName)

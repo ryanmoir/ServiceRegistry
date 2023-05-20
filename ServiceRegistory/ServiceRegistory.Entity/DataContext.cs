@@ -1,7 +1,7 @@
 ﻿namespace ServiceRegistory.Entity
 {
-    using ServiceRegistory.Entity.Tables;
     using Microsoft.EntityFrameworkCore;
+    using ServiceRegistory.Entity.Tables;
 
     partial class DataContext : DbContext
     {
@@ -10,7 +10,6 @@
 
         }
 
-        public DbSet<Discovery> Discovery { get; set; }
         public DbSet<Registory> Registory { get; set; }
     }
 }

@@ -13,7 +13,7 @@
 
             var requestMeth = request.Method;
 
-            var headerDict = request.Headers.ToDictionary(x=> x.Key, x=> x.Value);
+            var headerDict = request.Headers.ToDictionary(x => x.Key, x => x.Value);
 
             var contentString = string.Empty;
             using (var content = new StreamContent(request.Body))

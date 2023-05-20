@@ -1,9 +1,9 @@
 ﻿namespace ServiceRegistory.EntityAcceess.Repository.Implmentation
 {
+    using Microsoft.EntityFrameworkCore;
     using ServiceRegistory.Entity;
     using ServiceRegistory.EntityAcceess.Repository.Interface;
     using ServiceRegistory.EntityAcceess.UnitOfWork.Interface;
-    using Microsoft.EntityFrameworkCore;
 
     public class GenericRepository<T> : IGenericRespository<T> where T : class
     {
