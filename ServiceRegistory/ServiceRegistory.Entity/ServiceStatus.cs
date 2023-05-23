@@ -5,6 +5,5 @@
         Healthy = 0,
         HeavyLoad = 1,
         NotResponding = 2,
-        Unaviable = 3,
     }
 }

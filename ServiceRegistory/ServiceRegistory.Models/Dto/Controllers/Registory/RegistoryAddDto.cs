@@ -11,7 +11,5 @@
         public string LocalAddress { get; set; }
 
         public int Port { get; set; }
-
-        public string ServiceStatus { get; set; }
     }
 }

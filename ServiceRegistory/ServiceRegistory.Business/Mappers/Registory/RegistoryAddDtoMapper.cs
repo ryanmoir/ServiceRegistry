@@ -1,4 +1,5 @@
-﻿using ServiceRegistory.Models.Dto.Controllers.Discovery;
+﻿using ServiceRegistory.Entity;
+using ServiceRegistory.Models.Dto.Controllers.Discovery;
 
 namespace ServiceRegistory.Business.Mappers.Registory
 {
@@ -14,7 +15,7 @@ namespace ServiceRegistory.Business.Mappers.Registory
             entity.GlobalAddress = dto.GlobalAddress;
             entity.LocalAddress = dto.LocalAddress;
             entity.Port = dto.Port;
-            entity.ServiceStatus = dto.ServiceStatus;
+            entity.ServiceStatus = ServiceStatus.Healthy.ToString();
 
             return entity;
         }
