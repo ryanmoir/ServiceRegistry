@@ -20,6 +20,11 @@ namespace ServiceRegistory.Business.Services.Implmentation
             Logger = logger;
         }
 
+        public Task QueueCheckForHeartBeats()
+        {
+            return Task.Factory.StartNew(() => { this.CheckForHeartBeats(); });
+        }
+
         public async Task<List<KeyValuePair<long,Exception>>> CheckForHeartBeats()
         {
             var records = await RegistoryRepository.GetAll();
